@@ -1,0 +1,11 @@
+﻿@model List<Data.Models.Order>
+<hr>
+<h2 class="intro-text text-center">
+    Сделать выбор
+    <strong></strong>
+</h2>
+<hr>
+@foreach (var order in Model)
+{
+    @Html.Partial("Order", order)
+}

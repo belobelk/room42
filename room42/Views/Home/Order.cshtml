@@ -1,0 +1,11 @@
+﻿@using System
+
+@model Data.Models.Order
+
+<div class="well well-small">
+    @for (var i = 0; i < 10; i++)
+{
+    <button class="btn btn-info fixed-button" type="button">0@(i+0):00 - 0@(i + 1):00</button>
+
+}
+</div>

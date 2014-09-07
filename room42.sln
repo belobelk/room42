@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "room42", "room42\room42.csproj", "{EA870D7C-9CDC-477E-B8C8-BFF703FA119F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{3AC794F0-084E-454D-A4CD-C8B873C5D050}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{80C92C7F-056C-427A-8BA5-5B94F781041D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "template", "template", "{C251F2FC-0BCB-4C7F-85F6-BC5DC86C2A96}"
+	ProjectSection(SolutionItems) = preProject
+		template-business-casual\about.html = template-business-casual\about.html
+		template-business-casual\blog.html = template-business-casual\blog.html
+		template-business-casual\contact.html = template-business-casual\contact.html
+		template-business-casual\index.html = template-business-casual\index.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{93113041-0901-4135-92B0-2AC7ABFFF325}"
+	ProjectSection(SolutionItems) = preProject
+		template-business-casual\css\bootstrap.css = template-business-casual\css\bootstrap.css
+		template-business-casual\css\bootstrap.min.css = template-business-casual\css\bootstrap.min.css
+		template-business-casual\css\business-casual.css = template-business-casual\css\business-casual.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "fonts", "fonts", "{987E4DEB-D2D0-4A47-B05D-7CF12690DDE2}"
+	ProjectSection(SolutionItems) = preProject
+		template-business-casual\fonts\glyphicons-halflings-regular.eot = template-business-casual\fonts\glyphicons-halflings-regular.eot
+		template-business-casual\fonts\glyphicons-halflings-regular.svg = template-business-casual\fonts\glyphicons-halflings-regular.svg
+		template-business-casual\fonts\glyphicons-halflings-regular.ttf = template-business-casual\fonts\glyphicons-halflings-regular.ttf
+		template-business-casual\fonts\glyphicons-halflings-regular.woff = template-business-casual\fonts\glyphicons-halflings-regular.woff
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{10F80B68-CECE-4AA1-9766-DF12DFD97B72}"
+	ProjectSection(SolutionItems) = preProject
+		template-business-casual\img\bg.jpg = template-business-casual\img\bg.jpg
+		template-business-casual\img\intro-pic.jpg = template-business-casual\img\intro-pic.jpg
+		template-business-casual\img\slide-1.jpg = template-business-casual\img\slide-1.jpg
+		template-business-casual\img\slide-2.jpg = template-business-casual\img\slide-2.jpg
+		template-business-casual\img\slide-3.jpg = template-business-casual\img\slide-3.jpg
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{7BF81C64-2A4A-4C5F-9B9F-1485C41688F7}"
+	ProjectSection(SolutionItems) = preProject
+		template-business-casual\js\bootstrap.js = template-business-casual\js\bootstrap.js
+		template-business-casual\js\bootstrap.min.js = template-business-casual\js\bootstrap.min.js
+		template-business-casual\js\jquery-1.11.0.js = template-business-casual\js\jquery-1.11.0.js
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Implementation", "Implementation\Implementation.csproj", "{CBB426B1-3538-4D77-9F23-FA9A174553E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA870D7C-9CDC-477E-B8C8-BFF703FA119F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA870D7C-9CDC-477E-B8C8-BFF703FA119F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA870D7C-9CDC-477E-B8C8-BFF703FA119F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA870D7C-9CDC-477E-B8C8-BFF703FA119F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AC794F0-084E-454D-A4CD-C8B873C5D050}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AC794F0-084E-454D-A4CD-C8B873C5D050}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AC794F0-084E-454D-A4CD-C8B873C5D050}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AC794F0-084E-454D-A4CD-C8B873C5D050}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80C92C7F-056C-427A-8BA5-5B94F781041D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80C92C7F-056C-427A-8BA5-5B94F781041D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80C92C7F-056C-427A-8BA5-5B94F781041D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80C92C7F-056C-427A-8BA5-5B94F781041D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBB426B1-3538-4D77-9F23-FA9A174553E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBB426B1-3538-4D77-9F23-FA9A174553E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBB426B1-3538-4D77-9F23-FA9A174553E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBB426B1-3538-4D77-9F23-FA9A174553E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{93113041-0901-4135-92B0-2AC7ABFFF325} = {C251F2FC-0BCB-4C7F-85F6-BC5DC86C2A96}
+		{987E4DEB-D2D0-4A47-B05D-7CF12690DDE2} = {C251F2FC-0BCB-4C7F-85F6-BC5DC86C2A96}
+		{10F80B68-CECE-4AA1-9766-DF12DFD97B72} = {C251F2FC-0BCB-4C7F-85F6-BC5DC86C2A96}
+		{7BF81C64-2A4A-4C5F-9B9F-1485C41688F7} = {C251F2FC-0BCB-4C7F-85F6-BC5DC86C2A96}
+	EndGlobalSection
+EndGlobal
