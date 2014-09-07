@@ -7,17 +7,35 @@ using Infrastructure.Interfaces;
 
 namespace Data.Models
 {
+    /// <summary>
+    /// Заказанная игра
+    /// </summary>
     public class Order : Entity<Guid>
     {
-        public virtual DateTime GameStartDateTime { get; protected set; }
+        /// <summary>
+        /// Дата и время игры
+        /// </summary>
+        public DateTime GameStartDateTime { get; protected set; }
 
-        public virtual int GameDurationInMinutes { get; set; }
+        /// <summary>
+        /// Время игры в минутах
+        /// </summary>
+        public int GameDuration { get; set; }
 
-        public virtual string Email { get; set; }
+        /// <summary>
+        /// Почтовый ящик заказчика
+        /// </summary>
+        public string Email { get; set; }
 
-        public virtual string PhoneNumber { get; set; }
+        /// <summary>
+        /// Телефон заказчика
+        /// </summary>
+        public string PhoneNumber { get; set; }
 
-        public virtual string FIO { get; set; }
+        /// <summary>
+        /// Имя заказчика
+        /// </summary>
+        public string FIO { get; set; }
 
         protected override string GenerateKey ()
         {

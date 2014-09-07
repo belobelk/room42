@@ -49,7 +49,10 @@
     <Compile Include="EF\DataContext.cs" />
     <Compile Include="EF\Repository.cs" />
     <Compile Include="EF\TestDataContext.cs" />
+    <Compile Include="Models\ApplicationOptions.cs" />
+    <Compile Include="Models\TimeInterval.cs" />
     <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderOptions.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

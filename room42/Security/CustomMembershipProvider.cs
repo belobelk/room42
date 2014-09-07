@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Specialized;
 using System.Security.Cryptography;
+using System.Web.Mvc;
 using System.Web.Security;
 using Data.Models;
 using Implementation.Helpers;
@@ -10,6 +12,15 @@ namespace room42.Security
 {
     public class CustomMembershipProvider : MembershipProvider
     {
+        private IRepository _repository;
+        private HashAlgorithm _hashingAlgorithm = HashAlgorithm.Create("SHA256");
+
+        public override void Initialize(string name, NameValueCollection config)
+        {
+            base.Initialize(name, config);
+            _repository = DependencyResolver.Current.GetService<IRepository>();
+        }
+
         public override MembershipUser CreateUser(string username,
            string password, string email, string passwordQuestion,
            string passwordAnswer, bool isApproved,
@@ -113,13 +124,11 @@ namespace room42.Security
 
         public override bool ValidateUser(string username, string password)
         {
-            var accHelper = new AccountHelper();
-            return false;
-            //var user = _repository.Single<User>(x => x.UserName.Equals(username));
-            //if (user == null) return false;
+            var user = _repository.Single<User>(x => x.UserName.Equals(username));
+            if (user == null) return false;
 
-            //var hash = PasswordGenerator.HashPassword(password, user.PasswordSalt, _hashAlgorithm);
-            //return hash.Equals(user.PasswordHash);
+            var hash = PasswordGenerator.HashPassword(password, user.PasswordSalt, _hashingAlgorithm);
+            return hash.Equals(user.PasswordHash);
         }
 
         public override bool UnlockUser(string userName)

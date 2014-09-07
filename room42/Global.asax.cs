@@ -26,7 +26,6 @@ namespace room42
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
 
-            NinjectWebCommon.Kernel.Inject(Membership.Provider);
         }
     }
 }

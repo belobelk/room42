@@ -70,7 +70,6 @@ namespace room42.App_Start
         {
             kernel.Bind<DbContext>().To<DataContext>().InRequestScope().OnDeactivation(x => x.SaveChanges());
             kernel.Bind<IRepository>().To<Repository>().InRequestScope().WithConstructorArgument("isSharedContext", true);
-            kernel.Bind<AccountHelper>().ToSelf().InRequestScope();//.WithConstructorArgument("hashingAlgorithm", "SHA256");
         }        
     }
 }

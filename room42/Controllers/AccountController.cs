@@ -1,19 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Transactions;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using Data.Models;
-using DotNetOpenAuth.AspNet;
 using Infrastructure.Interfaces;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
-using ExternalLogin = room42.Models.ExternalLogin;
 using LocalPasswordModel = room42.Models.LocalPasswordModel;
 using LoginModel = room42.Models.LoginModel;
-using RegisterExternalLoginModel = room42.Models.RegisterExternalLoginModel;
 using RegisterModel = room42.Models.RegisterModel;
 
 namespace room42.Controllers
@@ -47,7 +39,7 @@ namespace room42.Controllers
             }
 
             // If we got this far, something failed, redisplay form
-            ModelState.AddModelError("", "The user name or password provided is incorrect.");
+            ModelState.AddModelError("", "Имя пользователя или пароль не верны");
             return View(model);
         }
 
@@ -61,15 +53,6 @@ namespace room42.Controllers
             WebSecurity.Logout();
 
             return RedirectToAction("Index", "Home");
-        }
-
-        //
-        // GET: /Account/Register
-
-        [AllowAnonymous]
-        public ActionResult Register()
-        {
-            return View();
         }
 
         //
@@ -97,35 +80,6 @@ namespace room42.Controllers
 
             // If we got this far, something failed, redisplay form
             return View(model);
-        }
-
-        //
-        // POST: /Account/Disassociate
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Disassociate(string provider, string providerUserId)
-        {
-            string ownerAccount = OAuthWebSecurity.GetUserName(provider, providerUserId);
-            ManageMessageId? message = null;
-
-            // Only disassociate the account if the currently logged in user is the owner
-            if (ownerAccount == User.Identity.Name)
-            {
-                // Use a transaction to prevent the user from deleting their last login credential
-                using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = IsolationLevel.Serializable }))
-                {
-                    bool hasLocalAccount = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
-                    if (hasLocalAccount || OAuthWebSecurity.GetAccountsFromUserName(User.Identity.Name).Count > 1)
-                    {
-                        OAuthWebSecurity.DeleteAccount(provider, providerUserId);
-                        scope.Complete();
-                        message = ManageMessageId.RemoveLoginSuccess;
-                    }
-                }
-            }
-
-            return RedirectToAction("Manage", new { Message = message });
         }
 
         //
